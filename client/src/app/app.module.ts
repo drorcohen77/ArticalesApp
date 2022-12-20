@@ -7,20 +7,26 @@ import { CategoriesComponent } from './main/components/categories/categories.com
 import { ArticlesComponent } from './main/components/articles/articles.component';
 import { FavouritesComponent } from './main/components/favourites/favourites.component';
 import { ArticleComponent } from './main/components/articles/article/article.component';
+import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OutsourceApi } from './core/variebles/outsource_api';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CategoriesComponent,
-    ArticlesComponent,
-    FavouritesComponent,
-    ArticleComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CategoriesComponent,
+        ArticlesComponent,
+        FavouritesComponent,
+        ArticleComponent,
+        NavbarComponent,
+    ],
+    providers: [OutsourceApi],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ]
 })
 export class AppModule { }

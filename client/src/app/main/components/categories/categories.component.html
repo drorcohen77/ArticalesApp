@@ -1,1 +1,4 @@
 <p>categories works!</p>
+<div type="button" (click)= "getArticles(category)" *ngFor="let category of categories">
+  <p>{{ category }}</p>
+</div>
