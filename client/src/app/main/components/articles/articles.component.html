@@ -1,1 +1,7 @@
 <p>articles works!</p>
+<div
+  *ngFor="let article of articlesCategory; index as i"
+  type="button" (click)="getArticle(i)"
+>
+  <p>{{article?.title}}</p>
+</div>

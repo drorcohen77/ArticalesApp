@@ -10,7 +10,7 @@ import { OutsourceApi } from '../variebles/outsource_api';
 export class AppService {
 
   private articles: Article[] = [];
-  private categories = [];
+  public categories: any = [];
 
   private readonly articleList$ = new BehaviorSubject<Article[]> ([]);
   readonly articleList = this.articleList$.asObservable();
@@ -23,7 +23,16 @@ export class AppService {
       .get<Article[]>(this.apiEndpoint.newsdata_api_uri + this.apiEndpoint.newsdata_api_key + this.apiEndpoint.searchCriteria)
       .pipe(
         tap((data: any) => {
-          this.articles = data;
+          console.log(data.results)
+          data.results.map(
+            (item:any) => this.articles.push({
+              title: item.title,
+              description: item.description,
+              image: item.image_url,
+              category: item.category,
+            })
+          );
+          console.log(this.articles)
           this.articleList$.next(this.articles);
         })
       );

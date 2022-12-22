@@ -5,5 +5,5 @@ export class OutsourceApi {
 
   public readonly newsdata_api_uri: string = 'https://newsdata.io/api/1/news?apikey=';
   public readonly newsdata_api_key: string = 'pub_14841ac55b9bbc1b5cd42908160d3b0608d38';
-  public readonly searchCriteria: string = '&country=il&&language=en';
+  public readonly searchCriteria: string = '&language=en';
 }

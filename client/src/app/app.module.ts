@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CategoriesComponent } from './main/components/categories/categories.component';
 import { ArticlesComponent } from './main/components/articles/articles.component';
 import { FavouritesComponent } from './main/components/favourites/favourites.component';
-import { ArticleComponent } from './main/components/articles/article/article.component';
+import { ArticleComponent } from './main/components/article/article.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OutsourceApi } from './core/variebles/outsource_api';
