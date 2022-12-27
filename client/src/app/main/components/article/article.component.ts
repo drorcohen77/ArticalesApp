@@ -1,8 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { elementAt, find, firstValueFrom, map, Observable, Subscription, switchMap, tap } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 import { Article } from 'src/app/core/models/article.model';
-import { AppService } from 'src/app/core/services/app.service';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
   selector: 'app-article',
@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   readonly articles$: Observable<Article[]> = this.appService.articleList;
   index!: any;
 
-  constructor(private appService: AppService, private activateRoute: ActivatedRoute) {}
+  constructor(private appService: ApiService, private activateRoute: ActivatedRoute, private nav: Router) {}
 
   ngOnInit(): void {
 
@@ -25,6 +25,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
     if(this.index !== undefined) {
       this.sub = this.articles$.subscribe(art => this.article = art[this.index]);
     }
+  }
+
+  backToArticles(category: string) {
+    this.nav.navigateByUrl(`/articles/${category}`);
   }
 
 

@@ -10,6 +10,8 @@ import { ArticleComponent } from './main/components/article/article.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OutsourceApi } from './core/variebles/outsource_api';
+import { ButtonComponent } from './core/components/button/button.component';
+import { ServerHttp } from './core/variebles/server_api';
 
 
 @NgModule({
@@ -20,8 +22,9 @@ import { OutsourceApi } from './core/variebles/outsource_api';
         FavouritesComponent,
         ArticleComponent,
         NavbarComponent,
+        ButtonComponent,
     ],
-    providers: [OutsourceApi],
+    providers: [OutsourceApi, ServerHttp],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

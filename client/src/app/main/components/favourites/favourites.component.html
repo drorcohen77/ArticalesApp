@@ -1,1 +1,14 @@
 <p>favourites works!</p>
+<div *ngFor="let article of favourites$ | async; index as i">
+  <div class="favourites-buttons">
+    <div
+      type="button"
+      (click)="getArticle(i)"
+    >
+      <p>{{article?.title}}</p>
+
+    </div>
+  </div>
+  <app-button text="remove" color="red" (btnClick)="removeFromFavourites(article?.title)">
+  </app-button>
+</div>

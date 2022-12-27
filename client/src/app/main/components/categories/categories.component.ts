@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Article } from 'src/app/core/models/article.model';
-import { AppService } from 'src/app/core/services/app.service';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
   selector: 'app-categories',
@@ -12,10 +12,9 @@ import { AppService } from 'src/app/core/services/app.service';
 export class CategoriesComponent implements OnInit, OnDestroy {
 
   private sub!: Subscription;
-  // readonly categories$: Observable<Article[]> = this.appService.articleList;
   categories:string[] = [];
 
-  constructor(private appService: AppService, private nav: Router) {}
+  constructor(private appService: ApiService, private nav: Router) {}
 
 
   ngOnInit(): void {

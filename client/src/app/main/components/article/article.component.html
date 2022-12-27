@@ -1,4 +1,4 @@
-<div *ngIf="index !== undefined">{{article?.description}}
+<div *ngIf="index !== undefined">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -13,5 +13,10 @@
       </div>
     </div>
   </div>
-
+  <app-button
+    text="Back to Articles"
+    color="gray"
+    (btnClick)="backToArticles(article.category)"
+    >
+  </app-button>
 </div>

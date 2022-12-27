@@ -1,3 +1,3 @@
 export class ServerHttp {
-  public readonly mediastack_api_uri: string = '';
+  public readonly server_api_uri: string = '';
 }

@@ -7,10 +7,10 @@ import { OutsourceApi } from '../variebles/outsource_api';
 @Injectable({
   providedIn: 'root'
 })
-export class AppService {
+export class ApiService {
 
   private articles: Article[] = [];
-  public categories: any = [];
+  // public categories: any = [];
 
   private readonly articleList$ = new BehaviorSubject<Article[]> ([]);
   readonly articleList = this.articleList$.asObservable();
@@ -30,6 +30,7 @@ export class AppService {
               description: item.description,
               image: item.image_url,
               category: item.category,
+              favourites: false
             })
           );
           console.log(this.articles)

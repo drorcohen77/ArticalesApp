@@ -1,7 +1,27 @@
 <p>articles works!</p>
-<div
-  *ngFor="let article of articlesCategory; index as i"
-  type="button" (click)="getArticle(i)"
->
-  <p>{{article?.title}}</p>
+<div *ngFor="let article of articles$ | async; index as i">
+
+    <div type="button" (click)="getArticle(i)">
+      <p>{{article?.title}}</p>
+    </div>
+
+
+      <div class="favourites-buttons" *ngIf="!article.favourites">
+          <app-button
+          text="Add"
+          color="green"
+          (btnClick)="addToFavourites(article)"
+          >
+          </app-button>
+      </div>
+
+    <!-- <div class="favourites-buttons">
+      <app-button
+      text="Add"
+      color="green"
+      (btnClick)="addToFavourites(article)"
+      >
+      </app-button>
+    </div> -->
 </div>
+
